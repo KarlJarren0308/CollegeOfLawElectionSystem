@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accounts>
+    <account username="KarlMacz" password="85abf2a83969e870886d6c8285907fa3" type="Master Administrator"/> <!-- jinjinko -->
+    <account username="dummy" password="275876e34cf609db118f3d84b799a790" type="Facilitator"/> <!-- dummy -->
+</accounts>

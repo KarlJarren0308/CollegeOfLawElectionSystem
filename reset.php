@@ -1,0 +1,87 @@
+<?php
+    require('requests/mods.php');
+    require('requests/chat.php');
+
+    $mods = new Mods();
+
+    if(!(isset($_SESSION['user_id']) && isset($_SESSION['user_type']))) {
+        $mods->sendStatus($mods->getError(1), 'admin.php');
+    } else {
+        if($_SESSION['user_type'] == 'Voter') {
+            $mods->sendStatus($mods->getError(7), 'index.php');
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UE College of Law Election System</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</head>
+<body id="main-body">
+    <div id="main-block" class="shadow">
+        <div id="header">UE College of Law Election <?php echo date('Y'); ?><a href="dashboard.php" class="floating-button" style="right: 10px;"><span class="fa fa-home"></span></a></div>
+        <div id="content">
+            <div id="sub-header">Voter Reset</div>
+            <div id="side-bar" style="padding: 0 25px; width: 200px;">
+                <form class="form" method="POST" action="" style="margin-top: 65%;">
+                    <label>Student Number:</label>
+                    <input class="input-box focused-input" type="text" name="studentNumber" maxlength="11" required autofocus>
+                    <input class="input-button" type="submit" value="Register">
+                </form>
+            </div>
+            <div id="container">
+                <div id="msg">
+                    <?php
+                        if(isset($_POST['studentNumber'])) {
+                            $mods->startConnection();
+
+                            $studentNumber = $mods->escapeString($_POST['studentNumber']);
+
+                            $mods->setQuery("SELECT * FROM voters WHERE Voter_ID='$studentNumber'");
+
+                            if($mods->getCount() == 1) {
+                                $row = $mods->getResults('array');
+
+                                if($row['Status'] == 0) {
+                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter not registered. Voter Reset is unnecessary.</span>';
+                                } else if($row['Status'] == 1) {
+                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter has not yet submitted his/her votes. Voter Reset is unnecessary.</span>';
+                                } else if($row['Status'] == 2) {
+                                    $mods->setQuery("UPDATE voters SET Status=1 WHERE Voter_ID='$studentNumber'");
+
+                                    if($mods->getCount() > 0) {
+                                        $mods->setQuery("DELETE FROM votes WHERE Voter_ID='$studentNumber'");
+
+                                        if($mods->getCount() > 0) {
+                                            echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>User\'s votes has been reset.</span>';
+                                        } else {
+                                            echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Failed to reset user\'s votes. Please try again.</span>';
+                                        }
+                                    } else {
+                                        echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Failed to reset user\'s votes. Please try again.</span>';
+                                    }
+                                } else {
+                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Oops! Something\'s wrong with the User\'s Information.</span>';
+                                }
+                            } else {
+                                if(is_numeric($studentNumber)) {
+                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter not found.</span>';
+                                } else {
+                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Invalid input. Please try again.</span>';
+                                }
+                            }
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div id="footer">© Copyright <?php echo date('Y'); ?> UE-CCSS Research & Development Unit 2013</div>
+    </div>
+</body>
+</html>

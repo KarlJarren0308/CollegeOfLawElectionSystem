@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candidates>
+    <!--<candidate position="" id="" firstname="" middleinitial="" lastname="" year="" party=""/>-->
+    <candidate position="President" id="20120104350" firstname="SALDI" middleinitial="O" lastname="LOZADA" year="4TH" party="OFFICE TAMBAY"/>
+    <candidate position="President" id="20120123060" firstname="NEIL PETER" middleinitial="R" lastname="GARCIA" year="4TH" party="UNICORNS"/>
+    <candidate position="Vice President" id="20120115744" firstname="KARL JARREN" middleinitial="T" lastname="MACADANGDANG" year="4TH" party="OFFICE TAMBAY"/>
+    <candidate position="Vice President" id="20120143046" firstname="MARK ANGELO" middleinitial="P" lastname="RIVERA" year="4TH" party="UNICORNS"/>
+</candidates>
