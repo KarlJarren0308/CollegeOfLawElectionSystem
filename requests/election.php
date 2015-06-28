@@ -237,7 +237,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -252,7 +252,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -267,7 +267,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -282,7 +282,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -297,7 +297,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -312,7 +312,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -327,7 +327,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -342,7 +342,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -357,7 +357,7 @@
                         $returnValue .= '<img src="images/' . $candidate['id'] . '.jpg" class="candidate-image">';
                         $returnValue .= '<div class="candidate-info" data-candidate-id="' . $candidate['id'] . '">';
                         $returnValue .= '<div class="candidate-name">' . $name . '</div>';
-                        $returnValue .= '<div class="candidate-party-list">' . $candidate['party'] . '</div>';
+                        $returnValue .= '<div class="progress-bar"><span class="count" id="count-' . $candidate['id'] . '">' . $this->getVoteCount($candidate['id']) . '/' . $this->getVoterCount() . '</span><span class="bar" id="bar-' . $candidate['id'] . '"></span></div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
                         $returnValue .= '</div>';
@@ -367,7 +367,5 @@
 
             return $returnValue;
         }
-
-        function computeVotes() {}
     }
 ?>
