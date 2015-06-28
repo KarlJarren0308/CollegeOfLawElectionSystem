@@ -438,13 +438,13 @@
     background-image: url(../img/progress-bar.png);
     background-size: 20px;
     background-repeat: repeat-x;
-    display: inline-block;
     height: 25px;
-    width: 100%;
+    width: 0%;
 }
 
 .progress-bar > .count {
     color: white;
+    display: none;
     font-size: 20px;
     position: absolute;
     text-align: center;
