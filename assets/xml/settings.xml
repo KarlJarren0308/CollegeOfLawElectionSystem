@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings>
-    <setting name="hostname" value="localhost"/>
-    <setting name="username" value="root"/>
-    <setting name="password" value=""/>
-    <setting name="database" value="law_election_database"/>
-</settings>
+<settings><setting name="hostname" value="localhost"/><setting name="username" value="root"/><setting name="password" value=""/><setting name="database" value="law_election_database"/><setting name="status" value="3"/></settings>

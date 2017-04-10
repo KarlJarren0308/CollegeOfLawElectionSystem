@@ -115,15 +115,18 @@ $(document).ready(function() {
                 pos = 'Business Manager';
                 break;
             case '6':
-                pos = '4th Year Representative';
+                pos = 'P.R.O.';
                 break;
             case '7':
-                pos = '3rd Year Representative';
+                pos = '4th Year Representative';
                 break;
             case '8':
-                pos = '2nd Year Representative';
+                pos = '3rd Year Representative';
                 break;
             case '9':
+                pos = '2nd Year Representative';
+                break;
+            case '10':
                 pos = '1st Year Representative';
                 break;
             default:

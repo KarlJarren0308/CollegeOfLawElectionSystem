@@ -25,7 +25,7 @@
 </head>
 <body id="main-body">
     <div id="main-block" class="shadow">
-        <div id="header">UE College of Law Election <?php echo date('Y'); ?><a href="dashboard.php" class="floating-button" style="right: 10px;"><span class="fa fa-home"></span></a></div>
+        <div id="header">UE College of Law Election <?php echo date('Y'); ?><a href="dashboard.php" class="floating-button" style="right: 10px;" title="Dashboard"><span class="fa fa-home"></span></a></div>
         <div id="content">
             <div id="sub-header">Voter Registration</div>
             <div id="side-bar" style="padding: 0 25px; width: 200px;">
@@ -53,24 +53,26 @@
                                     $mods->setQuery("UPDATE voters SET Status=1 WHERE Voter_ID='$studentNumber'");
 
                                     if($mods->getCount() > 0) {
-                                        echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter has been registered.</span>';
+                                        echo '<img class="icon" src="assets/img/check-mark.png" alt="icon">&nbsp;&nbsp;<span>Voter has been registered.</span>';
                                     } else {
-                                        echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Failed to register voter.</span>';
+                                        echo '<img class="icon" src="assets/img/cross-mark.png" alt="icon">&nbsp;&nbsp;<span>Failed to register voter.</span>';
                                     }
                                 } else if($row['Status'] == 1) {
-                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter is already registered.</span>';
+                                    echo '<img class="icon" src="assets/img/exclamation-mark.png" alt="icon">&nbsp;&nbsp;<span>Voter is already registered.</span>';
                                 } else if($row['Status'] == 2) {
-                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter has already voted.</span>';
+                                    echo '<img class="icon" src="assets/img/exclamation-mark.png" alt="icon">&nbsp;&nbsp;<span>Voter has already voted.</span>';
                                 } else {
-                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Oops! Something\'s wrong with the User\'s Information.</span>';
+                                    echo '<img class="icon" src="assets/img/exclamation-mark.png" alt="icon">&nbsp;&nbsp;<span>Oops! Something\'s wrong with the User\'s Information.</span>';
                                 }
                             } else {
                                 if(is_numeric($studentNumber)) {
-                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Voter not found.</span>';
+                                    echo '<img class="icon" src="assets/img/cross-mark.png" alt="icon">&nbsp;&nbsp;<span>Voter not found.</span>';
                                 } else {
-                                    echo '<img class="icon" src="" alt="icon">&nbsp;&nbsp;<span>Invalid input. Please try again.</span>';
+                                    echo '<img class="icon" src="assets/img/cross-mark.png" alt="icon">&nbsp;&nbsp;<span>Invalid input. Please try again.</span>';
                                 }
                             }
+
+                            echo '<script>setTimeout(function() { window.location="registration.php"; }, 3000);</script>';
                         }
                     ?>
                 </div>

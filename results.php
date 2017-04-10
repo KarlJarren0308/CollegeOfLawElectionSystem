@@ -25,7 +25,7 @@
 </head>
 <body id="main-body">
     <div id="main-block" class="shadow">
-        <div id="header">UE College of Law Election <?php echo date('Y'); ?><a href="dashboard.php" class="floating-button" style="right: 10px;"><span class="fa fa-home"></span></a></div>
+        <div id="header">UE College of Law Election <?php echo date('Y'); ?><a href="requests/report.php" class="floating-button" style="right: 10px;" target="_blank" title="Generate Report"><span class="fa fa-file-pdf-o"></span></a><a href="dashboard.php" class="floating-button" style="right: 45px;" title="Dashboard"><span class="fa fa-home"></span></a></div>
         <div id="content">
             <div id="sub-header">Election Results</div>
             <div id="side-bar" style="text-align: center; padding: 0 25px; width: 200px;">
@@ -37,10 +37,11 @@
                     <option value="3" class="fg-dark">Treasurer</option>
                     <option value="4" class="fg-dark">Auditor</option>
                     <option value="5" class="fg-dark">Business Manager</option>
-                    <option value="6" class="fg-dark">4th Year Representative</option>
-                    <option value="7" class="fg-dark">3rd Year Representative</option>
-                    <option value="8" class="fg-dark">2nd Year Representative</option>
-                    <option value="9" class="fg-dark">1st Year Representative</option>
+                    <option value="6" class="fg-dark">P.R.O.</option>
+                    <option value="7" class="fg-dark">4th Year Representative</option>
+                    <option value="8" class="fg-dark">3rd Year Representative</option>
+                    <option value="9" class="fg-dark">2nd Year Representative</option>
+                    <option value="10" class="fg-dark">1st Year Representative</option>
                 </select>
                 <button id="reveal-button" class="input-button">Reveal</button>
             </div>

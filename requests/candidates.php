@@ -33,19 +33,19 @@
                 }
             }
 
-            if($ctr > 0) {
+            // if($ctr > 0) {
                 $mods->setQuery("UPDATE voters SET Status=2 WHERE Voter_ID='$sessionID'");
 
                 if($mods->getCount() == 1) {
                     $mods->sendStatus('20c1e9da750353cf0cba49283c17f8a7', '../index.php', 'output');
                 }
-            } else {
-                $mods->sendStatus($mods->getError(5), '../index.php');
-            }
+            // } else {
+                // $mods->sendStatus($mods->getError(5), '../index.php');
+            // }
         } else if($row['Status'] == 2) {
-            echo 'Voter already voted.';
+            $mods->sendStatus($mods->getError(4), '../index.php');
         } else {
-            echo 'Oops! There\'s something wrong with the voter\'s information.';
+            $mods->sendStatus($mods->getError(8), '../index.php');
         }
     }
 

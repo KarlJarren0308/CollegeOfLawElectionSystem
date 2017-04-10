@@ -6,7 +6,7 @@
         private $username;
         private $password;
         private $database;
-        private $xmlReader;
+        private $xml;
 
         function __construct() {
             date_default_timezone_set('Asia/Manila');
@@ -15,13 +15,13 @@
             if(!file_exists(__DIR__ . '/../assets/xml/settings.xml')) {
                 $newXml = fopen(__DIR__ . '/../assets/xml/settings.xml', 'w');
                 fwrite($newXml, '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL);
-                fwrite($newXml, '<settings><setting name="hostname" value="localhost"/><setting name="username" value="root"/><setting name="password" value=""/><setting name="database" value="law_election_database"/></settings>');
+                fwrite($newXml, '<settings><setting name="hostname" value="localhost"/><setting name="username" value="root"/><setting name="password" value=""/><setting name="database" value="law_election_database"/><setting name="status" value="3"/></settings>');
                 fclose($newXml);
             }
 
-            $xml = simplexml_load_file(__DIR__ . '/../assets/xml/settings.xml');
+            $this->xml = simplexml_load_file(__DIR__ . '/../assets/xml/settings.xml');
 
-            foreach($xml->setting as $setting) {
+            foreach($this->xml->setting as $setting) {
                 if($setting['name'] == 'hostname') {
                     $this->host = $setting['value'];
                 } else if($setting['name'] == 'username') {
@@ -30,6 +30,26 @@
                     $this->password = $setting['value'];
                 } else if($setting['name'] == 'database') {
                     $this->database = $setting['value'];
+                }
+            }
+        }
+
+        function modifySettings($name, $value) {
+            foreach($this->xml->setting as $setting) {
+                if($setting['name'] == $name) {
+                    $setting['value'] = $value;
+                }
+            }
+
+            $this->xml->asXML(__DIR__ . '/../assets/xml/settings.xml');
+        }
+
+        function checkSystemSettings($name) {
+            foreach($this->xml->setting as $setting) {
+                if($setting['name'] == $name) {
+                    return $setting['value'];
+
+                    break;
                 }
             }
         }
@@ -68,10 +88,11 @@
             return mysqli_real_escape_string($this->connection, $text);
         }
 
-        function login($username = '', $type = '') {
+        function login($username = '', $type = '', $yearLevel = 0) {
             if($username != '' && $type != '') {
                 $_SESSION['user_id'] = $username;
                 $_SESSION['user_type'] = $type;
+                $_SESSION['user_year'] = $yearLevel;
             }
         }
 
@@ -138,6 +159,15 @@
                     break;
                 case 7:
                     return '339bac317aafce10a3ca6e3d587e8638'; // Voter accessing dashboard
+                    break;
+                case 8:
+                    return '3cac82ae5ccd07669559860294c18a5a'; // Invalid Voter Status
+                    break;
+                case 9:
+                    return 'b6cd32c00e817d96f9d201476ca7e156'; // Election Paused
+                    break;
+                case 10:
+                    return '561e6b5e9c6324dabf2cc16602df98c8'; // Election Stopped
                     break;
                 default:
                     return false;

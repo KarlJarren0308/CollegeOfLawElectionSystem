@@ -58,10 +58,19 @@
                         $mods->showDialog('prompt', 'System Error', 'Voter has already voted.');
                         break;
                     case $mods->getError(5):
-                        $mods->showDialog('prompt', 'System Error', 'The system failed to record your vote. Please login to continue.');
+                        $mods->showDialog('prompt', 'System Error', 'The system didn\'t record your vote. Please login to continue.');
                         break;
                     case $mods->getError(7):
                         $mods->showDialog('prompt', 'Login Status', 'Voters are not allowed to access the system\'s dashboard.');
+                        break;
+                    case $mods->getError(8):
+                        $mods->showDialog('prompt', 'Login Status', 'Oops! There\'s something wrong with the voter\'s information.');
+                        break;
+                    case $mods->getError(9):
+                        $mods->showDialog('prompt', 'System Error', 'The election has been paused. You are not allowed to vote.');
+                        break;
+                    case $mods->getError(10):
+                        $mods->showDialog('prompt', 'System Error', 'The election has been stopped. You are not allowed to vote.');
                         break;
                     default:
                         break;
@@ -71,7 +80,8 @@
 
                 switch($output) {
                     case '20c1e9da750353cf0cba49283c17f8a7':
-                        $mods->showDialog('prompt', 'Voting Status', 'Your vote has been successfully recorded. Thank you for voting!', 'precinct.php');
+                        $mods->showDialog('prompt', 'Voting Status', 'Your vote has been successfully recorded. Thank you for voting!', 'index.php');
+                        $mods->logout();
                         break;
                     default:
                         break;

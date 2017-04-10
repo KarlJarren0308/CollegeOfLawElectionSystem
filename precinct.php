@@ -34,10 +34,26 @@
                     <img id="image-treasurer" class="image" src="images/warrior.png" draggable="false">
                     <img id="image-auditor" class="image" src="images/warrior.png" draggable="false">
                     <img id="image-business-manager" class="image" src="images/warrior.png" draggable="false">
-                    <img id="image-4th-year-rep" class="image" src="images/warrior.png" draggable="false">
-                    <img id="image-3rd-year-rep" class="image" src="images/warrior.png" draggable="false">
-                    <img id="image-2nd-year-rep" class="image" src="images/warrior.png" draggable="false">
-                    <img id="image-1st-year-rep" class="image" src="images/warrior.png" draggable="false">
+                    <img id="image-pro" class="image" src="images/warrior.png" draggable="false">
+                    <?php
+                        switch($_SESSION['user_year']) {
+                            case 4:
+                                echo '<img id="image-4th-year-rep" class="image" src="images/warrior.png" draggable="false">';
+                                break;
+                            case 3:
+                                echo '<img id="image-3rd-year-rep" class="image" src="images/warrior.png" draggable="false">';
+                                break;
+                            case 2:
+                                echo '<img id="image-2nd-year-rep" class="image" src="images/warrior.png" draggable="false">';
+                                break;
+                            case 1:
+                                echo '<img id="image-1st-year-rep" class="image" src="images/warrior.png" draggable="false">';
+                                break;
+                            default:
+                                header('Location: index.php');
+                                break;
+                        }
+                    ?>
                 </div>
             </div>
             <div id="container">
@@ -56,6 +72,7 @@
                     <input type="hidden" id="voted-treasurer" name="votes[]">
                     <input type="hidden" id="voted-auditor" name="votes[]">
                     <input type="hidden" id="voted-business-manager" name="votes[]">
+                    <input type="hidden" id="voted-pro" name="votes[]">
                     <input type="hidden" id="voted-4th-year-rep" name="votes[]">
                     <input type="hidden" id="voted-3rd-year-rep" name="votes[]">
                     <input type="hidden" id="voted-2nd-year-rep" name="votes[]">
@@ -65,5 +82,9 @@
         </div>
         <div id="footer">© Copyright <?php echo date('Y'); ?> UE-CCSS Research & Development Unit 2013</div>
     </div>
+    <div class="special"></div>
+    <script>
+        var sessionID = <?php echo $_SESSION['user_year']; ?>;
+    </script>
 </body>
 </html>

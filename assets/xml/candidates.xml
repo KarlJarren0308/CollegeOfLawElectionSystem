@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <candidates>
-    <!--<candidate position="" id="" firstname="" middleinitial="" lastname="" year="" party=""/>-->
-    <candidate position="President" id="20120104350" firstname="SALDI" middleinitial="O" lastname="LOZADA" year="4TH" party="OFFICE TAMBAY"/>
-    <candidate position="President" id="20120123060" firstname="NEIL PETER" middleinitial="R" lastname="GARCIA" year="4TH" party="UNICORNS"/>
-    <candidate position="Vice President" id="20120115744" firstname="KARL JARREN" middleinitial="T" lastname="MACADANGDANG" year="4TH" party="OFFICE TAMBAY"/>
-    <candidate position="Vice President" id="20120143046" firstname="MARK ANGELO" middleinitial="P" lastname="RIVERA" year="4TH" party="UNICORNS"/>
+    <candidate id="15109261683" lastname="VILLAVERDE" firstname="MA. PRECIOSA" middleinitial="U" position="President" party="" year="1"/>
+    <candidate id="15553444226" lastname="DE GUZMAN" firstname="ERIKA BIANCA" middleinitial="S" position="Vice President" party="" year="2"/>
+    <candidate id="15462509690" lastname="MORANO" firstname="WILSON" middleinitial="" position="Vice President" party="" year="3"/>
+    <candidate id="15950592137" lastname="MESA" firstname="GRANT BUENA JOY" middleinitial="C" position="Secretary" party="" year="2"/>
+    <candidate id="15758778385" lastname="PAYOYO" firstname="JOSEPH" middleinitial="B" position="Treasurer" party="" year="4"/>
+    <candidate id="15688045133" lastname="TAGAZA" firstname="MEILIN ROSS" middleinitial="D" position="Treasurer" party="" year="3"/>
+    <candidate id="15508344548" lastname="RODRIGUEZ" firstname="NERRIE MARGRETT PREC" middleinitial="G" position="Auditor" party="" year="1"/>
+    <candidate id="15714492495" lastname="TAGAOTAO" firstname="JET-JET JAMES" middleinitial="B" position="Business Manager" party="" year="2"/>
+    <candidate id="15213678541" lastname="ARNINO" firstname="KIM" middleinitial="R" position="P.R.O." party="" year="2"/>
+    <candidate id="15643082391" lastname="MALLARI" firstname="JEREMIAH" middleinitial="B" position="3rd Year Representative" party="" year="3"/>
+    <candidate id="15118251735" lastname="ORBE" firstname="PAOLO ENRICO" middleinitial="W" position="3rd Year Representative" party="" year="3"/>
+    <candidate id="15315976113" lastname="HERMOSA" firstname="JUDIMEL AIZA" middleinitial="M" position="2nd Year Representative" party="" year="2"/>
+    <candidate id="15227437919" lastname="BASCO" firstname="EMILOU ANN MARIE" middleinitial="B" position="1st Year Representative" party="" year="1"/>
 </candidates>
